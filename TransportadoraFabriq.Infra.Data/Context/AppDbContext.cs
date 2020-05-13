@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using TransportadoraFabriq.Domain;
 
 namespace TransportadoraFabriq.Infra.Data.Context
 {
@@ -16,20 +15,6 @@ namespace TransportadoraFabriq.Infra.Data.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
-        }
-
-        public DbSet<Cliente> Clientes { get; set; }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-
-            modelBuilder.Entity<Cliente>().ToTable("Clientes");
-
-
-            // ModelConfiguration
-            //AddModelConfiguration(modelBuilder);
-
-        }
+        }        
     }
 }

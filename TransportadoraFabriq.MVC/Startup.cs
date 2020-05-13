@@ -69,8 +69,6 @@ namespace TransportadoraFabriq.MVC
     {
         public static IServiceCollection AddCustomDbContext(this IServiceCollection services, IConfiguration configuration)
         {
-
-
             services.AddEntityFrameworkSqlServer()
                    .AddDbContext<AppDbContext>(options =>
                    {
