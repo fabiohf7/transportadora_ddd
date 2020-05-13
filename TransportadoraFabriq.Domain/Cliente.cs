@@ -1,8 +1,9 @@
 ﻿using System;
+using TransportadoraFabriq.Shared.Entities;
 
-namespace TransportadoraFabriq.Domain.Entities
+namespace TransportadoraFabriq.Domain
 {
-    public class Cliente
+    public class Cliente : Entity
     {
         public Cliente(Guid id, string nome, string sobrenome, string email, string documento, DateTime dataCadastro)
         {

@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using TransportadoraFabriq.Domain.Entities;
+using TransportadoraFabriq.Domain;
 
 namespace TransportadoraFabriq.Infra.Data.Context
 {
