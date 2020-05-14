@@ -53,7 +53,9 @@ namespace TransportadoraFabriq.WebAPI
             var builder = new ContainerBuilder();
 
             builder.Populate(services);
+            builder.RegisterModule(new MediatorModule());
             builder.RegisterModule(new ApplicationModule());
+            //builder.RegisterModule(new ApplicationEventoModule());
 
             var container = builder.Build();
 

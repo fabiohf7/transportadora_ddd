@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="ValueObjects\CRLV.cs~RF29e7db0e.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TransportadoraFabriq.Shared\TransportadoraFabriq.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

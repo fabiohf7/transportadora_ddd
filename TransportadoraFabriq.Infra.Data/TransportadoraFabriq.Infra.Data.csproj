@@ -19,7 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TransportadoraFabriq.Domain\TransportadoraFabriq.Domain.csproj" />
     <ProjectReference Include="..\TransportadoraFabriq.Shared\TransportadoraFabriq.Shared.csproj" />
   </ItemGroup>
 
