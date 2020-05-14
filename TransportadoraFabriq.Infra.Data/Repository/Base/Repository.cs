@@ -1,14 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using TransportadoraFabriq.Infra.Data.Context;
-using TransportadoraFabriq.Shared.Entities.Interfaces;
 
 namespace TransportadoraFabriq.Infra.Data.Repository.Base
 {
-    public abstract class Repository<TDomain> : IRepository<TDomain> where TDomain : class
+    public abstract class Repository<TDomain> where TDomain : class
     {
         protected readonly AppDbContext _context;
 
@@ -27,12 +23,12 @@ namespace TransportadoraFabriq.Infra.Data.Repository.Base
             await _context.Set<TDomain>().AddAsync(entity);
         }
 
-        public virtual void Delete(TDomain entity)
+        public virtual void Remove(TDomain entity)
         {
             _context.Set<TDomain>().Remove(entity);
         }
 
-        public virtual async Task DeleteAsync(TDomain entity)
+        public virtual async Task RemoveAsync(TDomain entity)
         {
             await Task.FromResult(_context.Set<TDomain>().Remove(entity));
         }

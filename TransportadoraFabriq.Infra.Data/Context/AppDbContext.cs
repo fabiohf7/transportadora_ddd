@@ -11,10 +11,5 @@ namespace TransportadoraFabriq.Infra.Data.Context
         {
 
         }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-
-        }        
     }
 }

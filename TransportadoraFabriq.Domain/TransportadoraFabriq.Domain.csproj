@@ -5,8 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\TransportadoraFabriq.Shared\TransportadoraFabriq.Shared.csproj" />
   </ItemGroup>
 
 </Project>

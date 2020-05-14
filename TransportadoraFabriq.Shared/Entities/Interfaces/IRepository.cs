@@ -2,18 +2,18 @@
 
 namespace TransportadoraFabriq.Shared.Entities.Interfaces
 {
-    public interface IRepository<T>
+    public interface IRepository<TEntity> where TEntity : class
     {
-        void Add(T entity);
+        void Add(TEntity entity);
 
-        Task AddAsync(T entity);
+        Task AddAsync(TEntity entity);
 
-        void Update(T entity);
+        void Update(TEntity entity);
 
-        Task UpdateAsync(T entity);
+        Task UpdateAsync(TEntity entity);
 
-        void Delete(T entity);
+        void Remove(TEntity entity);
 
-        Task DeleteAsync(T entity);
+        Task RemoveAsync(TEntity entity);
     }
 }

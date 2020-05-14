@@ -15,25 +15,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Shared", "4 - Shared", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Tests", "5 - Tests", "{FD7F7524-5F06-4CDF-98A5-A0E012FDD033}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransportadoraFabriq.Domain", "TransportadoraFabriq.Domain\TransportadoraFabriq.Domain.csproj", "{F315095F-7F1B-4342-902C-54498A866141}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransportadoraFabriq.Domain", "TransportadoraFabriq.Domain\TransportadoraFabriq.Domain.csproj", "{F315095F-7F1B-4342-902C-54498A866141}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransportadoraFabriq.MVC", "TransportadoraFabriq.MVC\TransportadoraFabriq.MVC.csproj", "{82CB9A70-A187-4D06-B586-07FB532C07EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransportadoraFabriq.Infra.Data", "TransportadoraFabriq.Infra.Data\TransportadoraFabriq.Infra.Data.csproj", "{9224E0E0-C3FD-4075-BAE3-BDBE2B56A24F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransportadoraFabriq.Infra.Data", "TransportadoraFabriq.Infra.Data\TransportadoraFabriq.Infra.Data.csproj", "{9224E0E0-C3FD-4075-BAE3-BDBE2B56A24F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransportadoraFabriq.Application", "TransportadoraFabriq.Application\TransportadoraFabriq.Application.csproj", "{AB0B684D-5BDB-4E1E-AE0E-C3BB6CB5B549}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransportadoraFabriq.Application", "TransportadoraFabriq.Application\TransportadoraFabriq.Application.csproj", "{AB0B684D-5BDB-4E1E-AE0E-C3BB6CB5B549}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{04F0FBA2-D89B-4884-8373-2BCD419B672F}"
 	ProjectSection(SolutionItems) = preProject
 		gitignore.txt = gitignore.txt
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entities", "Entities", "{29AD966F-82D8-44E4-80EA-3038E5C970E8}"
-	ProjectSection(SolutionItems) = preProject
-		Entity.cs = Entity.cs
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransportadoraFabriq.Shared", "TransportadoraFabriq.Shared\TransportadoraFabriq.Shared.csproj", "{F553EF20-D5D9-46B7-8757-5CEE1A63F283}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransportadoraFabriq.Shared", "TransportadoraFabriq.Shared\TransportadoraFabriq.Shared.csproj", "{F553EF20-D5D9-46B7-8757-5CEE1A63F283}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransportadoraFabriq.WebAPI", "TransportadoraFabriq.WebAPI\TransportadoraFabriq.WebAPI.csproj", "{10341DC8-BE70-471A-B475-25FE3AA8C59A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,10 +40,6 @@ Global
 		{F315095F-7F1B-4342-902C-54498A866141}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F315095F-7F1B-4342-902C-54498A866141}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F315095F-7F1B-4342-902C-54498A866141}.Release|Any CPU.Build.0 = Release|Any CPU
-		{82CB9A70-A187-4D06-B586-07FB532C07EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{82CB9A70-A187-4D06-B586-07FB532C07EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{82CB9A70-A187-4D06-B586-07FB532C07EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{82CB9A70-A187-4D06-B586-07FB532C07EC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9224E0E0-C3FD-4075-BAE3-BDBE2B56A24F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9224E0E0-C3FD-4075-BAE3-BDBE2B56A24F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9224E0E0-C3FD-4075-BAE3-BDBE2B56A24F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -61,17 +52,20 @@ Global
 		{F553EF20-D5D9-46B7-8757-5CEE1A63F283}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F553EF20-D5D9-46B7-8757-5CEE1A63F283}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F553EF20-D5D9-46B7-8757-5CEE1A63F283}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10341DC8-BE70-471A-B475-25FE3AA8C59A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10341DC8-BE70-471A-B475-25FE3AA8C59A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10341DC8-BE70-471A-B475-25FE3AA8C59A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10341DC8-BE70-471A-B475-25FE3AA8C59A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F315095F-7F1B-4342-902C-54498A866141} = {09E89EFC-586A-4F86-B56E-25BF4BF334CA}
-		{82CB9A70-A187-4D06-B586-07FB532C07EC} = {1D094784-1544-4370-BAB1-A0790B7ED246}
 		{9224E0E0-C3FD-4075-BAE3-BDBE2B56A24F} = {28D4AC5E-B86D-4E05-B335-7FC4E5A9EA05}
 		{AB0B684D-5BDB-4E1E-AE0E-C3BB6CB5B549} = {B4B1429E-8C65-496E-A830-DD9947E89715}
-		{29AD966F-82D8-44E4-80EA-3038E5C970E8} = {392AF847-944C-4827-9A64-7F9BB2D6D5AA}
 		{F553EF20-D5D9-46B7-8757-5CEE1A63F283} = {392AF847-944C-4827-9A64-7F9BB2D6D5AA}
+		{10341DC8-BE70-471A-B475-25FE3AA8C59A} = {1D094784-1544-4370-BAB1-A0790B7ED246}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {74F66E15-3D1E-4D7D-82A7-47D7C22F9E3A}
