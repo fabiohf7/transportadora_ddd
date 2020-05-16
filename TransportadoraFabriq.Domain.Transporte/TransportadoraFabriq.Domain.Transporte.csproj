@@ -12,4 +12,9 @@
     <ProjectReference Include="..\TransportadoraFabriq.Shared\TransportadoraFabriq.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Validations\" />
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
 </Project>

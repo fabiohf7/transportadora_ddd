@@ -1,7 +1,7 @@
 ﻿using TransportadoraFabriq.Domain.Transporte.ValueObjects;
 using TransportadoraFabriq.Shared.Entities;
 
-namespace TransportadoraFabriq.Domain.TransporteModule
+namespace TransportadoraFabriq.Domain.Transporte
 {
     public class Veiculo : Entity
     {

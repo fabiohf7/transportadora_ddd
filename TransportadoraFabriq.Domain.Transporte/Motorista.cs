@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using TransportadoraFabriq.Shared.Entities;
 
-namespace TransportadoraFabriq.Domain.TransporteModule
+namespace TransportadoraFabriq.Domain.Transporte
 {
     public class Motorista : Entity
     {
