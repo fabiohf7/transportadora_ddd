@@ -6,10 +6,5 @@
         {
 
         }
-
-        public AggregateRoot(string usuarioCadastro) : base(usuarioCadastro)
-        {
-
-        }
     }
 }

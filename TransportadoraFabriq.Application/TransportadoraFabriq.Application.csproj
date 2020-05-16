@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Transporte\CommandHandler\AdicionarVeiculoCommandHandler.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\TransportadoraFabriq.Domain.Transporte\TransportadoraFabriq.Domain.Transporte.csproj" />
   </ItemGroup>
 
@@ -19,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Transporte\CommandHandler\" />
     <Folder Include="Transporte\Validations\" />
   </ItemGroup>
 

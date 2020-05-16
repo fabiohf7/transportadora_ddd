@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="EntityConfig\" />
+    <None Remove="EntityMappingConfig\Itinerario\ItinerarioConfiguration.cs~RF59d498e.TMP" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TransportadoraFabriq.Domain.Transporte\TransportadoraFabriq.Domain.Transporte.csproj" />
     <ProjectReference Include="..\TransportadoraFabriq.Shared\TransportadoraFabriq.Shared.csproj" />
   </ItemGroup>
 

@@ -16,5 +16,18 @@ namespace TransportadoraFabriq.Domain.Transporte
         public DateTime DataNascimento { get; private set; }
 
         public bool Ativo { get; private set; }
+
+        protected Motorista()
+        {
+        }
+
+        public Motorista(string nome, string sobrenome, int cNH, DateTime dataNascimento)
+        {
+            Nome = nome;
+            Sobrenome = sobrenome;
+            CNH = cNH;
+            DataNascimento = dataNascimento;
+        }
+
     }
 }

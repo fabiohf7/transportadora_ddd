@@ -21,4 +21,8 @@
     <ProjectReference Include="..\TransportadoraFabriq.Shared\TransportadoraFabriq.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>

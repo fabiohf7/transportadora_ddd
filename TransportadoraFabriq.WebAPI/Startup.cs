@@ -94,7 +94,7 @@ namespace TransportadoraFabriq.WebAPI
             {
                 options.UseSqlServer(configuration.GetSection("ConnectionStrings:AppDbContext").Value, b =>
                 {
-                    b.MigrationsAssembly("TransportadoraFabriq.MVC");
+                    b.MigrationsAssembly("TransportadoraFabriq.WebAPI");
                 });
             });
 

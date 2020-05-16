@@ -4,17 +4,22 @@ using TransportadoraFabriq.Shared.Entities;
 namespace TransportadoraFabriq.Domain.Transporte
 {
     public class Comprovante : Entity
-    {
+    {        
+        public DateTime DataEntrega { get; private set; }
+
+        public Entrega Entrega { get; private set; }
+
+        public Guid EntregaId { get; private set; }
 
         protected Comprovante()
         {
+            
         }
 
-        public Comprovante(DateTime dataEntrega)
+        public Comprovante(Entrega entrega)
         {
-            DataEntrega = dataEntrega;
+            Entrega = entrega;
+            DataEntrega = DateTime.Now;
         }
-
-        public DateTime DataEntrega { get; private set; }
     }
 }

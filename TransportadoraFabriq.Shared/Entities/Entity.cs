@@ -1,4 +1,5 @@
-﻿using FluentValidation.Results;
+﻿using FluentValidation;
+using FluentValidation.Results;
 using System;
 
 namespace TransportadoraFabriq.Shared.Entities
@@ -10,11 +11,6 @@ namespace TransportadoraFabriq.Shared.Entities
             Id = Guid.NewGuid();
             DataCadastro = DateTime.Now;
 
-        }
-
-        public Entity(string usuarioCadastro) : base()
-        {
-            UsuarioCadastro = usuarioCadastro;
         }
 
         public Guid Id { get; private set; }
@@ -32,6 +28,19 @@ namespace TransportadoraFabriq.Shared.Entities
         public bool Valid { get; private set; }
 
         public bool Invalid => !Valid;
+
+        public bool Validate<TModel>(TModel model, AbstractValidator<TModel> validator)
+        {
+            ValidationResult = validator.Validate(model);
+
+            return Valid = ValidationResult.IsValid;
+        }
+
+        public void Atualizar(DateTime dataAlteracao, string usuarioAlteracao)
+        {
+            DataAtualizacao = dataAlteracao;
+            UsuarioAtualizacao = usuarioAlteracao;
+        }
 
         public override bool Equals(object obj)
         {

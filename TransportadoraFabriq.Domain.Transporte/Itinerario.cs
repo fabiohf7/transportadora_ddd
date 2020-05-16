@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using TransportadoraFabriq.Shared.Entities;
 
 namespace TransportadoraFabriq.Domain.Transporte
@@ -17,5 +18,16 @@ namespace TransportadoraFabriq.Domain.Transporte
         {
         }
 
+        public Itinerario(Motorista motorista, Veiculo veiculo)
+        {
+            Motorista = motorista;
+            Veiculo = veiculo;
+        }
+
+        public void AdicionarEntrega(string nomeCliente, string endereco, DateTime dataEntrega)
+        {
+            var entrega = new Entrega(nomeCliente, endereco, dataEntrega);
+            _entregas.Add(entrega);
+        }
     }
 }
