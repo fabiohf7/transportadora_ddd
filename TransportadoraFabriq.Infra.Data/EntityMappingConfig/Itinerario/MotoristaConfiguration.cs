@@ -1,8 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using TransportadoraFabriq.Domain.Transporte;
 using TransportadoraFabriq.Infra.Data.EntityMappingConfig.Base;
 
@@ -15,6 +12,14 @@ namespace TransportadoraFabriq.Infra.Data.EntityMappingConfig
             base.Configure(builder);
 
             builder.ToTable("Motorista");
+
+            builder.OwnsOne(x => x.CNH)
+                .Property(x => x.DataValidade)
+                .HasColumnName("ValidadeCnh");
+
+            builder.OwnsOne(x => x.CNH)
+               .Property(x => x.NumeroDeRegistro)
+               .HasColumnName("RegistroCnh");
         }
     }
 }

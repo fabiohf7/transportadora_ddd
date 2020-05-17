@@ -1,4 +1,5 @@
 ﻿using System;
+using TransportadoraFabriq.Domain.Transporte.Validations;
 using TransportadoraFabriq.Shared.Entities;
 
 namespace TransportadoraFabriq.Domain.Transporte
@@ -20,6 +21,11 @@ namespace TransportadoraFabriq.Domain.Transporte
         {
             Entrega = entrega;
             DataEntrega = DateTime.Now;
+        }
+
+        public void Validar()
+        {
+            Validate(this, new ComprovanteValidation());
         }
     }
 }

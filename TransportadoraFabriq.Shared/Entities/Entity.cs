@@ -9,19 +9,10 @@ namespace TransportadoraFabriq.Shared.Entities
         protected Entity()
         {
             Id = Guid.NewGuid();
-            DataCadastro = DateTime.Now;
 
         }
 
         public Guid Id { get; private set; }
-
-        public string UsuarioCadastro { get; private set; }
-
-        public DateTime DataCadastro { get; private set; }
-
-        public string UsuarioAtualizacao { get; private set; }
-
-        public DateTime DataAtualizacao { get; private set; }
 
         public ValidationResult ValidationResult { get; private set; }
 
@@ -34,12 +25,6 @@ namespace TransportadoraFabriq.Shared.Entities
             ValidationResult = validator.Validate(model);
 
             return Valid = ValidationResult.IsValid;
-        }
-
-        public void Atualizar(DateTime dataAlteracao, string usuarioAlteracao)
-        {
-            DataAtualizacao = dataAlteracao;
-            UsuarioAtualizacao = usuarioAlteracao;
         }
 
         public override bool Equals(object obj)

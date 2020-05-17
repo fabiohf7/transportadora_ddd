@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TransportadoraFabriq.Infra.Data.Context;
 
 namespace TransportadoraFabriq.WebAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200517202111_Alteracoes nas relacoes entre as entidades de dominio")]
+    partial class Alteracoesnasrelacoesentreasentidadesdedominio
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,9 +26,17 @@ namespace TransportadoraFabriq.WebAPI.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<DateTime>("DataAtualizacao");
+
+                    b.Property<DateTime>("DataCadastro");
+
                     b.Property<DateTime>("DataEntrega");
 
                     b.Property<Guid>("EntregaId");
+
+                    b.Property<string>("UsuarioAtualizacao");
+
+                    b.Property<string>("UsuarioCadastro");
 
                     b.HasKey("Id");
 
@@ -41,11 +51,19 @@ namespace TransportadoraFabriq.WebAPI.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<DateTime>("DataAtualizacao");
+
+                    b.Property<DateTime>("DataCadastro");
+
                     b.Property<string>("Endereco");
 
                     b.Property<Guid>("EntregaId");
 
                     b.Property<string>("Nome");
+
+                    b.Property<string>("UsuarioAtualizacao");
+
+                    b.Property<string>("UsuarioCadastro");
 
                     b.HasKey("Id");
 
@@ -60,9 +78,17 @@ namespace TransportadoraFabriq.WebAPI.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<DateTime>("DataAtualizacao");
+
+                    b.Property<DateTime>("DataCadastro");
+
                     b.Property<DateTime>("DataEntrega");
 
                     b.Property<Guid>("ItinerarioId");
+
+                    b.Property<string>("UsuarioAtualizacao");
+
+                    b.Property<string>("UsuarioCadastro");
 
                     b.HasKey("Id");
 
@@ -76,7 +102,15 @@ namespace TransportadoraFabriq.WebAPI.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<DateTime>("DataAtualizacao");
+
+                    b.Property<DateTime>("DataCadastro");
+
                     b.Property<Guid?>("MotoristaId");
+
+                    b.Property<string>("UsuarioAtualizacao");
+
+                    b.Property<string>("UsuarioCadastro");
 
                     b.Property<Guid?>("VeiculoId");
 
@@ -96,11 +130,19 @@ namespace TransportadoraFabriq.WebAPI.Migrations
 
                     b.Property<bool>("Ativo");
 
+                    b.Property<DateTime>("DataAtualizacao");
+
+                    b.Property<DateTime>("DataCadastro");
+
                     b.Property<DateTime>("DataNascimento");
 
                     b.Property<string>("Nome");
 
                     b.Property<string>("Sobrenome");
+
+                    b.Property<string>("UsuarioAtualizacao");
+
+                    b.Property<string>("UsuarioCadastro");
 
                     b.HasKey("Id");
 
@@ -116,7 +158,15 @@ namespace TransportadoraFabriq.WebAPI.Migrations
 
                     b.Property<double>("CapacidadeCarga");
 
+                    b.Property<DateTime>("DataAtualizacao");
+
+                    b.Property<DateTime>("DataCadastro");
+
                     b.Property<bool>("Refrigerado");
+
+                    b.Property<string>("UsuarioAtualizacao");
+
+                    b.Property<string>("UsuarioCadastro");
 
                     b.HasKey("Id");
 
@@ -165,10 +215,10 @@ namespace TransportadoraFabriq.WebAPI.Migrations
                             b1.Property<Guid>("MotoristaId");
 
                             b1.Property<DateTime>("DataValidade")
-                                .HasColumnName("ValidadeCnh");
+                                .HasColumnName("Validade");
 
                             b1.Property<string>("NumeroDeRegistro")
-                                .HasColumnName("RegistroCnh");
+                                .HasColumnName("Registro");
 
                             b1.HasKey("MotoristaId");
 

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TransportadoraFabriq.Domain.Transporte.Validations;
+using TransportadoraFabriq.Domain.Transporte.ValueObjects;
 using TransportadoraFabriq.Shared.Entities;
 
 namespace TransportadoraFabriq.Domain.Transporte
@@ -11,7 +13,7 @@ namespace TransportadoraFabriq.Domain.Transporte
 
         public string Sobrenome { get; private set; }
 
-        public int CNH { get; private set; }
+        public CNH CNH { get; private set; }
 
         public DateTime DataNascimento { get; private set; }
 
@@ -21,12 +23,22 @@ namespace TransportadoraFabriq.Domain.Transporte
         {
         }
 
-        public Motorista(string nome, string sobrenome, int cNH, DateTime dataNascimento)
+        public Motorista(string nome, string sobrenome, CNH cNH, DateTime dataNascimento)
         {
             Nome = nome;
             Sobrenome = sobrenome;
             CNH = cNH;
             DataNascimento = dataNascimento;
+            Ativo = true;
+
+            Validar();
+        }
+
+        public void Validar()
+        {
+            Validate(this, new MotoristaValidation());
+
+            //if (!CNH.IsValid())
         }
 
     }

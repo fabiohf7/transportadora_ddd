@@ -25,6 +25,8 @@ namespace TransportadoraFabriq.Domain.Transporte
             CapacidadeCarga = capacidadeCarga;
             Refrigerado = refrigerado;
             Ativo = true;
+
+            Validar();
         }
 
         public void Validar()

@@ -1,4 +1,5 @@
 ﻿using System;
+using TransportadoraFabriq.Domain.Transporte.Validations;
 using TransportadoraFabriq.Shared.Entities;
 
 namespace TransportadoraFabriq.Domain.Transporte
@@ -22,6 +23,13 @@ namespace TransportadoraFabriq.Domain.Transporte
             Nome = nome;
             Endereco = endereco;
             Entrega = entrega;
+
+            Validar();
+        }
+
+        public void Validar()
+        {
+            Validate(this, new DestinatarioValidation());
         }
     }
 }

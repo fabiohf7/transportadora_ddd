@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using TransportadoraFabriq.Domain.Transporte.Validations;
 using TransportadoraFabriq.Shared.Entities;
 
 namespace TransportadoraFabriq.Domain.Transporte
@@ -22,12 +23,19 @@ namespace TransportadoraFabriq.Domain.Transporte
         {
             Motorista = motorista;
             Veiculo = veiculo;
+
+            Validar();
         }
 
         public void AdicionarEntrega(string nomeCliente, string endereco, DateTime dataEntrega)
         {
             var entrega = new Entrega(nomeCliente, endereco, dataEntrega);
             _entregas.Add(entrega);
+        }
+
+        public void Validar()
+        {
+            Validate(this, new ItinerarioValidation());
         }
     }
 }
