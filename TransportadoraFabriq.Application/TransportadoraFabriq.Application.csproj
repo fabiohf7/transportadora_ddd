@@ -15,7 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Transporte\CommandHandler\" />
     <Folder Include="Transporte\Validations\" />
   </ItemGroup>
 
