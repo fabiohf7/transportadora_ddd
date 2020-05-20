@@ -30,7 +30,7 @@ namespace TransportadoraFabriq.Domain.Transporte
 
         public void AdicionarComprovante()
         {
-            this.Comprovate = new Comprovante(this);
+            //this.Comprovate = new Comprovante(this);
         }
 
         public void Validar()

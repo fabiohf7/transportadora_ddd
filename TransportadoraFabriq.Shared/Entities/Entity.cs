@@ -61,7 +61,6 @@ namespace TransportadoraFabriq.Shared.Entities
             {
                 AddDomainEvent(new NotificationDomain(error.ErrorMessage));
             }
-
         }
 
         public void AddDomainNotification(string messageId, string message)

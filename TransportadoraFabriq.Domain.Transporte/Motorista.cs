@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using TransportadoraFabriq.Domain.Transporte.Validations;
 using TransportadoraFabriq.Domain.Transporte.ValueObjects;
 using TransportadoraFabriq.Shared.Entities;
@@ -38,7 +36,10 @@ namespace TransportadoraFabriq.Domain.Transporte
         {
             Validate(this, new MotoristaValidation());
 
-            //if (!CNH.IsValid())
+            if (!CNH.IsValid())
+            {
+                AddDomainNotification("Motorista", "Documento de CNH é inválido.");
+            }
         }
 
     }

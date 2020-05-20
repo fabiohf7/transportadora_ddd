@@ -24,5 +24,25 @@ namespace TransportadoraFabriq.Domain.Transporte.ValueObjects
             yield return NumeroDeRegistro;
             yield return DataValidade;
         }
+
+        public bool IsValid()
+        {
+            if (string.IsNullOrEmpty(NumeroDeRegistro))
+            {
+                return false;
+            }
+
+            if (!BeAValidDate(DataValidade))
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool BeAValidDate(DateTime date)
+        {
+            return !date.Equals(default(DateTime));
+        }
     }
 }

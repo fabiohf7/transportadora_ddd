@@ -25,18 +25,20 @@ namespace TransportadoraFabriq.Application.Transporte
 
         public async Task<CommandResult> Handle(AdicionarItinerarioCommand request, CancellationToken cancellationToken)
         {
-            var itinerario = new Itinerario(request.Motorista, request.Veiculo);
+            //var new motorista 
+            //var new veiculo
+            //var itinerario = new Itinerario(request.Motorista, request.Veiculo);
 
-            await _itinerarioRepository.AddAsync(itinerario);
+            //await _itinerarioRepository.AddAsync(itinerario);
 
-            HandleEntity(itinerario);
+            //HandleEntity(itinerario);
 
             if (!IsSuccess())
                 return new CommandResult(false, "Existem notificações");
 
             await CommitAsync();
 
-            return new CommandResult(true, "Executado sem notificações", new { itinerario.Id });
+            return new CommandResult(true, "Executado sem notificações", new {  });
         }
     }
 }
