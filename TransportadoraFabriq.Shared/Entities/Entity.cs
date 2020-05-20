@@ -3,6 +3,7 @@ using FluentValidation.Results;
 using MediatR;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using TransportadoraFabriq.Shared.Notification;
 
 namespace TransportadoraFabriq.Shared.Entities
@@ -16,6 +17,7 @@ namespace TransportadoraFabriq.Shared.Entities
         protected Entity()
         {
             Id = Guid.NewGuid();
+            ValidationResult = new ValidationResult();
 
         }
 
@@ -23,15 +25,12 @@ namespace TransportadoraFabriq.Shared.Entities
 
         public ValidationResult ValidationResult { get; private set; }
 
-        public bool Valid { get; private set; }
-
-        public bool Invalid => !Valid;
-
-        public bool Validate<TModel>(TModel model, AbstractValidator<TModel> validator)
+        public void Validate<TModel>(TModel model, AbstractValidator<TModel> validator)
         {
-            ValidationResult = validator.Validate(model);
-
-            return Valid = ValidationResult.IsValid;
+            validator.Validate(model).Errors.ToList().ForEach(x =>
+            {
+                ValidationResult.Errors.Add(x);
+            });
         }
 
         public void AddDomainEvent(INotification eventItem)
@@ -50,22 +49,14 @@ namespace TransportadoraFabriq.Shared.Entities
             _domainEvents?.Clear();
         }
 
-        public void AddDomainNotification(string message)
-        {
-            AddDomainEvent(new NotificationDomain(message));
-        }
-
-        public void AddDomainNotification()
-        {
-            foreach (var error in this.ValidationResult.Errors)
-            {
-                AddDomainEvent(new NotificationDomain(error.ErrorMessage));
-            }
-        }
-
         public void AddDomainNotification(string messageId, string message)
         {
-            AddDomainEvent(new NotificationDomain(messageId, message));
+            AdicionarResultadoDeValidacao(new ValidationFailure(messageId, message));
+        }
+
+        private void AdicionarResultadoDeValidacao(ValidationFailure validationFailure)
+        {
+            this.ValidationResult.Errors.Add(validationFailure);
         }
 
         public override bool Equals(object obj)

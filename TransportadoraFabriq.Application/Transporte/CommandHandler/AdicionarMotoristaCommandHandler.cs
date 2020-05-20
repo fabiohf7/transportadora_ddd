@@ -23,7 +23,7 @@ namespace TransportadoraFabriq.Application.Transporte
 
         public async Task<CommandResult> Handle(AdicionarMotoristaCommand request, CancellationToken cancellationToken)
         {
-            var cnhMotorista = new CNH(request.NumeroDeRegistroCnh, request.DataValidadeCnh);
+            var cnhMotorista = new CNH(request.NumeroDeRegistroCnh, request.DataValidadeCnh);           
 
             var motorista = new Motorista(request.Nome, request.Sobrenome, cnhMotorista, request.DataNascimento);
 

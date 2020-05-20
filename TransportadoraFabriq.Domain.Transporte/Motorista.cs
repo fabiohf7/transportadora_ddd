@@ -34,12 +34,10 @@ namespace TransportadoraFabriq.Domain.Transporte
 
         public void Validar()
         {
-            Validate(this, new MotoristaValidation());
-
             if (!CNH.IsValid())
-            {
                 AddDomainNotification("Motorista", "Documento de CNH é inválido.");
-            }
+
+            Validate(this, new MotoristaValidation());
         }
 
     }

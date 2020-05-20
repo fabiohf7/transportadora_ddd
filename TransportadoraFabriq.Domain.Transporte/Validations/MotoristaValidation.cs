@@ -7,8 +7,8 @@ namespace TransportadoraFabriq.Domain.Transporte.Validations
     {
         public MotoristaValidation()
         {
-            RuleFor(x => x.Nome).NotNull().WithMessage("Nome do motorista é obrigatório.");
-            RuleFor(x => x.Sobrenome).NotNull().WithMessage("Sobrenome do motorista é obrigatório.");
+            RuleFor(x => x.Nome).NotEmpty().WithMessage("Nome do motorista é obrigatório.");
+            RuleFor(x => x.Sobrenome).NotEmpty().WithMessage("Sobrenome do motorista é obrigatório.");
             RuleFor(x => x.DataNascimento).Must(BeAValidDate).WithMessage("Deve ser uma data válida.");
             RuleFor(x => x.CNH).NotNull().WithMessage("Nome do motorista é obrigatório.");
         }

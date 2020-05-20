@@ -31,12 +31,10 @@ namespace TransportadoraFabriq.Domain.Transporte
 
         public void Validar()
         {
-            Validate(this, new VeiculoValidation());
-
             if (!CRLV.IsValid())
-            {
-                AddDomainNotification("Veículo", "CRLV é inválido.");
-            }
+                AddDomainNotification("Motorista", "Documento de CNH é inválido.");
+
+            Validate(this, new VeiculoValidation());
         }
     }
 }

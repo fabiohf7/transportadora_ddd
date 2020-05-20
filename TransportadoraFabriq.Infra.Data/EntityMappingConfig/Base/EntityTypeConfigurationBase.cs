@@ -11,10 +11,6 @@ namespace TransportadoraFabriq.Infra.Data.EntityMappingConfig.Base
             builder.HasKey(c => c.Id);
 
             builder.Ignore(x => x.ValidationResult);
-            
-            builder.Ignore(x => x.Valid);
-
-            builder.Ignore(x => x.Invalid);
         }
     }
 }
