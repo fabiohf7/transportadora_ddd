@@ -3,6 +3,7 @@ using TransportadoraFabriq.Shared.Commands.Interfaces;
 
 namespace TransportadoraFabriq.Application.Transporte.Command
 {
+    [DataContract]
     public class AdicionarVeiculoCommand : ICommand
     {
         [DataMember]

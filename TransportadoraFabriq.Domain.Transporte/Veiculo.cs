@@ -33,7 +33,10 @@ namespace TransportadoraFabriq.Domain.Transporte
         {
             Validate(this, new VeiculoValidation());
 
-            //if (!CRLV.IsValid())
+            if (!CRLV.IsValid())
+            {
+                AddDomainNotification("Veículo", "CRLV é inválido.");
+            }
         }
     }
 }
