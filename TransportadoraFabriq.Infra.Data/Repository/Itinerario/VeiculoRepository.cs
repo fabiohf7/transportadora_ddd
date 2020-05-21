@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Threading.Tasks;
 using TransportadoraFabriq.Domain.Transporte;
 using TransportadoraFabriq.Domain.Transporte.Repositories;
@@ -16,10 +17,9 @@ namespace TransportadoraFabriq.Infra.Data.Repository
             _context = context;
         }
 
-        public async Task<Motorista> ObterPorId(Guid id)
+        public async Task<Veiculo> ObterPorId(Guid id)
         {
-            return null;
-            //return await _context.Itinerarios.FirstOrDefaultAsync(x => x.Id == id);
+            return await _context.Veiculos.FirstOrDefaultAsync(x => x.Id == id);
         }
     }
 }

@@ -6,6 +6,6 @@ namespace TransportadoraFabriq.Domain.Transporte.Repositories
 {
     public interface IVeiculoRepository : IRepository<Veiculo>
     {
-        Task<Motorista> ObterPorId(Guid id);
+        Task<Veiculo> ObterPorId(Guid id);
     }
 }
