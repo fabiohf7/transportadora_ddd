@@ -10,7 +10,7 @@ namespace TransportadoraFabriq.Infra.Data.Repository
 {
     public class VeiculoRepository : Repository<Veiculo>, IVeiculoRepository
     {
-        private readonly AppDbContext _context;
+        private new readonly AppDbContext _context;
 
         public VeiculoRepository(AppDbContext context) : base(context)
         {

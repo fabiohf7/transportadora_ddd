@@ -1,7 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using TransportadoraFabriq.Domain.Transporte;
 using TransportadoraFabriq.Domain.Transporte.Repositories;
@@ -12,7 +10,7 @@ namespace TransportadoraFabriq.Infra.Data.Repository
 {
     public class ItinerarioRepository : Repository<Itinerario>, IItinerarioRepository
     {
-        private readonly AppDbContext _context;
+        private new readonly AppDbContext _context;
 
         public ItinerarioRepository(AppDbContext context) : base(context)
         {
@@ -21,8 +19,7 @@ namespace TransportadoraFabriq.Infra.Data.Repository
 
         public async Task<Itinerario> ObterPorId(Guid id)
         {
-            return null;
-            //return await _context.Itinerarios.FirstOrDefaultAsync(x => x.Id == id);
+            return await _context.Itinerarios.FirstOrDefaultAsync(x => x.Id == id);
         }
     }
 }

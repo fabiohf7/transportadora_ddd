@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Threading.Tasks;
 using TransportadoraFabriq.Domain.Transporte;
 using TransportadoraFabriq.Domain.Transporte.Repositories;
@@ -9,7 +10,7 @@ namespace TransportadoraFabriq.Infra.Data.Repository
 {
     public class MotoristaRepository : Repository<Motorista>, IMotoristaRepository
     {
-        private readonly AppDbContext _context;
+        private new readonly AppDbContext _context;
 
         public MotoristaRepository(AppDbContext context) : base(context)
         {
@@ -18,8 +19,7 @@ namespace TransportadoraFabriq.Infra.Data.Repository
 
         public async Task<Motorista> ObterPorId(Guid id)
         {
-            return null;
-            //return await _context.Itinerarios.FirstOrDefaultAsync(x => x.Id == id);
+            return await _context.Motoristas.FirstOrDefaultAsync(x => x.Id == id);
         }
     }
 }
