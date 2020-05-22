@@ -29,7 +29,6 @@ namespace TransportadoraFabriq.Shared.Commands
             {
                 await _mediator.Publish(new NotificationDomain(error.PropertyName, error.ErrorMessage));
             }
-
         }
 
         protected async void HandleEntities(IEnumerable<Entity> entities)

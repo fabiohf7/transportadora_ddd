@@ -8,6 +8,8 @@ namespace TransportadoraFabriq.Application.Transporte.Validations
     {
         public AdicionarItinerarioValidator()
         {
+            RuleFor(x => x.MotoristaId).NotNull().WithMessage("ID do motorista é obrigatório.");
+            RuleFor(x => x.VeiculoId).NotNull().WithMessage("ID do veículo é obrigatório.");
         }
 
         private bool BeAValidDate(DateTime date)

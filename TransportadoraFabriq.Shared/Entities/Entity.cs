@@ -4,7 +4,6 @@ using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using TransportadoraFabriq.Shared.Notification;
 
 namespace TransportadoraFabriq.Shared.Entities
 {
@@ -12,18 +11,17 @@ namespace TransportadoraFabriq.Shared.Entities
     {
         private List<INotification> _domainEvents;
 
-        public IReadOnlyCollection<INotification> DomainEvents => _domainEvents?.AsReadOnly();
+        public IReadOnlyCollection<INotification> DomainEvents => _domainEvents?.AsReadOnly();        
+
+        public Guid Id { get; private set; }
+
+        public ValidationResult ValidationResult { get; private set; }
 
         protected Entity()
         {
             Id = Guid.NewGuid();
             ValidationResult = new ValidationResult();
-
         }
-
-        public Guid Id { get; private set; }
-
-        public ValidationResult ValidationResult { get; private set; }
 
         public void Validate<TModel>(TModel model, AbstractValidator<TModel> validator)
         {

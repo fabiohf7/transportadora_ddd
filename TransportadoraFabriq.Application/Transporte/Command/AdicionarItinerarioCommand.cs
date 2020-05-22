@@ -15,8 +15,33 @@ namespace TransportadoraFabriq.Application.Transporte.Command
         [DataMember]
         public Guid VeiculoId { get; private set; }
 
-        
-        //[DataMember]
-        //public List<EntregaCommand> EntregaCommand { get; private set; }
+        [DataMember]
+        public List<EntregaCommand> Entregas { get; private set; }
+
+        public class EntregaCommand
+        {
+            public EntregaCommand(DateTime dataEntrega, DestinatarioCommand destinatario)
+            {
+                DataEntrega = dataEntrega;
+                Destinatario = destinatario;
+            }
+
+            public DateTime DataEntrega { get; private set; }
+
+            public DestinatarioCommand Destinatario { get; private set; }
+        }
+
+        public class DestinatarioCommand
+        {
+            public DestinatarioCommand(string nome, string endereco)
+            {
+                Nome = nome;
+                Endereco = endereco;
+            }
+
+            public string Nome { get; private set; }
+
+            public string Endereco { get; private set; }
+        }
     }
 }
